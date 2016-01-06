@@ -1,28 +1,27 @@
-== README
+# Smart Chat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This (not so) smart chat app serves for code sample purpose.
 
-Things you may want to cover:
+A quick glance at the site http://smchat.herokuapp.com/
 
-* Ruby version
+### Partial Directory Layout
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+    app/
+      assets/
+        images/                      
+        stylesheets/
+          message.css.scss     --> chat message pad styles
+        javascripts/
+          message.js           --> chat message
+          message_composer.js  --> chat message composer
+          message_list.js      --> chat message list
+          message_pad.js       --> chat message pad (composed of message list and message composer)
+          message_store.js     --> robot response store
+          person.js            --> chat person
+          ...
+      controllers/                      
+        default_controller.rb  --> home
+      views/                      
+        default/
+          home.html.erb        --> main app entry
+  
