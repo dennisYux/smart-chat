@@ -1,7 +1,7 @@
 // Global var/consts
 var ENTER_KEY_CODE = 13;
 
-// Where user inputs message
+////////// Message Composer //////////
 var MessageComposer = function(opts) {
   if (typeof opts == "undefined") opts = {};
   // Validate opts

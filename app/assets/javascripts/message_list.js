@@ -15,7 +15,7 @@ var MessageList = function(opts) {
 (function(){
   this.addMessage = function(message) {
     var item = new MessageListItem(message);
-    this.$list.append(item.$item);
+    this.$list.append(item.ui());
 
     // Scroll to bottom
     this.$list.scrollTop(this.$list[0].scrollHeight);
@@ -59,6 +59,10 @@ var MessageListItem = function(message, opts) {
     $item.find('.message-text').html(this.message.text);
 
     this.$item = $item;
+  };
+
+  this.ui = function() {
+    return this.$item;
   };
 }).call(MessageListItem.prototype);
 

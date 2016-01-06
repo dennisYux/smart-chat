@@ -1,10 +1,12 @@
-// Message Store for Bot
+////////// Message Store for Bot //////////
 var MessageStore = (function(){
 	var MessageStore = {};
 	// Private member
 	var data = {
-		steak: "Carbernet Sauvenion",
-		samon: "Chandonay"
+		steak: "When pairing wines with leaner cuts, look for light or medium-bodied red wines. These wines should have slightly higher acidity that will cut through the texture of the lean meat.<br/>\
+            <a href='http://winefolly.com/tutorial/wine-with-lamb-steak-red-meat/'>http://winefolly.com/tutorial/wine-with-lamb-steak-red-meat/</a>",
+		salmon: "Pair a plain and simple salmon with an oak-aged white wine or time-aged white wine, something with more robust Meyer lemon, nut or brûlée notes that will spice and texture the fish.<br/>\
+            <a href='http://winefolly.com/tutorial/pairing-wine-with-salmon'>http://winefolly.com/tutorial/pairing-wine-with-salmon</a>"
 	};
 
   var responses = {
@@ -16,7 +18,7 @@ var MessageStore = (function(){
 
 	MessageStore.respondTo = function(message) {
 		// Strip keywords
-		var words = message.trim().toLowerCase().split(' ');
+		var words = message.trim().replace(/[^\w\s]/g, "").toLowerCase().split(' ');
 		var hits = [];
 
 		// Get keywords hits
