@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="alert alert-info">
+    Hi there, I am Little D (aka Lit.D). I am supposed to be a very smart sommelier who could suggest delicious wines for people.
+    However my creator is so lazy that he only trained me for one day and spoke to me some legacy wine pairing I already knew !!! He excused this for something called 'Deemo'. (For code pattern ??? Never mind I forgot)<br/>
+    I am so angry but loyal. So below is what he wants me to convey:<br/><br/>
+    Respond to keywords: <b>"Steak"</b>, <b>"Salmon"</b>
+  </div>
+  <div class="col-md-6 col-md-offset-1">
+    <div class="message-pad"></div>
+  </div>
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h5>View source code</h5>
+        <a href="https://github.com/dennisYux/chat-demo">https://github.com/dennisYux/chat-demo</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<script>
+  $(function(){
+    ///// Chat App Main js /////
+
+    // Initialize people in chat
+    var bot = new Person("Lit.D");
+    var visitor = new Person("Me");
+
+    var messagePad = new MessagePad({
+      host: visitor,
+      guests: [bot],
+      chatWithBot: true
+    });
+
+    // Add welcome messages from bot
+    messagePad.messageList.addMessage({
+      person: bot,
+      text: "Hi there, I am Little D"
+    });
+
+    // Insert ui
+    $('.message-pad').replaceWith(messagePad.ui());
+  });
+</script>
